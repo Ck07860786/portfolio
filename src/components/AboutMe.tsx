@@ -13,19 +13,19 @@ import { CalendarDays } from "lucide-react";
 export function AboutMe() {
   return (
     <div className="min-h-screen w-full dark:bg-black bg-white dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative z-10">
-      {/* Background */}
+      
       <div className="absolute inset-0 pointer-events-none -z-10">
         <div className="w-full h-full dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       </div>
 
-      {/* Main Content */}
+     
       <div className="relative z-10 px-6 py-12">
         <TracingBeam>
           <h1 className="text-4xl text-neutral-700 dark:text-neutral-400 font-bold text-center mb-8">
             About
           </h1>
 
-          {/* Personal Introduction Section */}
+        
           <div className="max-w-2xl mx-auto antialiased pt-6 relative">
             <div className="mb-10">
               <p className="text-sm text-neutral-700 dark:text-neutral-400 mb-4">
@@ -48,7 +48,7 @@ export function AboutMe() {
             </div>
           </div>
 
-          {/* Academic Timeline Section */}
+          
           <div className="max-w-2xl mx-auto antialiased pt-4 relative">
             {dummyContent.map((item, index) => (
               <div key={`content-${index}`} className="mb-10">

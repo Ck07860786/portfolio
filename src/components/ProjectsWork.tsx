@@ -118,12 +118,12 @@ export function ProjectsWork() {
   return (
     <>
     <div className="max-w-7xl mx-auto my-16 mt-28 mb-40 px-4">
-      {/* Page Heading */}
+     
       <h1 className="text-4xl font-bold text-center text-neutral-700 dark:text-neutral-400 mb-12">
         Project Work
       </h1>
 
-      {/* Tabs Component */}
+      
       <div className="mb-16">
         <Tabs tabs={tabs} />
       </div>
@@ -185,7 +185,7 @@ const ProjectTabContent = ({
         </div>
       </div>
 
-      {/* Image Section */}
+   
       <div className="flex-1 min-h-full">
         <Image
           src={image}

@@ -13,9 +13,9 @@ export function Contact() {
           I’m open to discussing freelance projects or full-time opportunities. Let’s connect!
         </p>
 
-        {/* Social Media Links */}
+       
         <div className="flex gap-6 justify-center mt-10">
-          {/* GitHub Link */}
+          
           <a
             href="https://github.com/ck07860786"
             target="_blank"
@@ -29,7 +29,7 @@ export function Contact() {
             />
           </a>
 
-          {/* Email Link */}
+         
           <a
             href="mailto:yourname@example.com"
             className="text-neutral-500 hover:text-white transition duration-300"
@@ -41,7 +41,7 @@ export function Contact() {
             />
           </a>
 
-          {/* LinkedIn Link */}
+          
           <a
             href="https://www.linkedin.com/in/chotukumar786/"
             target="_blank"
@@ -55,7 +55,7 @@ export function Contact() {
             />
           </a>
 
-          {/* Instagram Link */}
+         
           <a
             href="https://www.instagram.com/yourusername"
             target="_blank"

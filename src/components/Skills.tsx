@@ -5,7 +5,7 @@ export function Skills() {
   return (
     <div className="h-[] w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
       <div className="w-full max-w-7xl px-4">
-        {/* Skills Section */}
+      
         <div className="">
           <Card>
             <CardTitle>
@@ -80,7 +80,7 @@ export function Skills() {
           </Card>
         </div>
 
-        {/* Tools Section */}
+       
         <div className=" mt-10">
           <Card>
             <CardTitle>
@@ -112,7 +112,6 @@ export function Skills() {
   );
 }
 
-// SkillCard Component
 const SkillCard = ({
   title,
   description,
@@ -135,7 +134,7 @@ const SkillCard = ({
   );
 };
 
-// ToolCard Component
+
 const ToolCard = ({ name, img }: { name: string; img: string }) => {
   return (
     <div className="p-4 bg-zinc-950 rounded-lg shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out flex flex-col items-center">
@@ -149,7 +148,7 @@ const ToolCard = ({ name, img }: { name: string; img: string }) => {
   );
 };
 
-// Card Component
+
 const Card = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="p-8 rounded-lg shadow-2xl bg-black border border-gray-700">
@@ -158,7 +157,7 @@ const Card = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// CardTitle Component
+
 const CardTitle = ({ children }: { children: React.ReactNode }) => {
   return (
     <h3 className="text-2xl font-bold text-white mb-4 text-center">
@@ -167,7 +166,7 @@ const CardTitle = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// CardDescription Component
+
 const CardDescription = ({ children }: { children: React.ReactNode }) => {
   return (
     <p className="text-sm text-gray-400 text-center">{children}</p>
