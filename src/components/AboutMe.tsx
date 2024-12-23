@@ -31,7 +31,7 @@ export function AboutMe() {
               <p className="text-sm text-neutral-700 dark:text-neutral-400 mb-4">
                 Hello! My name is{" "}
                 <span className="font-bold">Chotu Kumar</span>, and I am a
-                passionate MERN Stack Developer with a strong foundation in
+                passionate Full Stack Developer with a strong foundation in
                 computer science and a knack for building dynamic, user-friendly
                 web applications. Currently pursuing my B.Tech in Computer
                 Science Engineering at Baba Farid College of Engineering &
