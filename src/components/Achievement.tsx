@@ -17,58 +17,58 @@ export function Achievement() {
 export const products = [
   {
     title: "Top 10 At hackCBS",
-    link: "https://gomoonbeam.com",
+    link: "/",
     thumbnail:
       hackCBS,
   },
 
   {
     title: "Participated in BFCET HACk at BFGI",
-    link: "https://cursor.so",
+    link: "/",
     thumbnail:
       hackBFCET,
   },
   {
     title: "Top 10 At hackCBS",
-    link: "https://cursor.so",
+    link: "/",
     thumbnail:
       cbs,
   },
   {
     title: "Participated in BFCET HACk at BFGI",
-    link: "https://cursor.so",
+    link: "/",
     thumbnail:
       hackbfgi,
   },
   {
     title: "Top 10 At hackCBS",
-    link: "https://gomoonbeam.com",
+    link: "/",
     thumbnail:
       hackCBS,
   },
 
   {
     title: "Participated in BFCET HACk at BFGI",
-    link: "https://cursor.so",
+    link: "/",
     thumbnail:
       hackBFCET,
   },
   {
     title: "Top 10 Ranker At hackCBS",
-    link: "https://cursor.so",
+    link: "/",
     thumbnail:
       hackcb,
   },
  
   {
     title: "Participated in BFCET HACk at BFGI",
-    link: "https://cursor.so",
+    link: "/",
     thumbnail:
       hackbfgi,
   },
   {
     title: "HACK CBS",
-    link: "https://cursor.so",
+    link: "/",
     thumbnail:
       cbspannel,
   },
