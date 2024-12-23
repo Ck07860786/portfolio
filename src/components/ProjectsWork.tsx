@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import Image,{StaticImageData} from "next/image";
 import { Tabs } from "./ui/tabs";
 import partyplanner from "@/pictures/partyplanner.png";
 import visaventure from "@/pictures/visaventure.png";
@@ -146,7 +146,7 @@ const ProjectTabContent = ({
   description: string;
   githubLink: string;
   liveLink: string;
-  image: string;
+  image: StaticImageData;
   technologies: string[];
 }) => {
   return (
