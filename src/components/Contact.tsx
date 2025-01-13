@@ -4,7 +4,10 @@ import { BackgroundBeams } from "./ui/background-beams";
 
 export function Contact() {
   return (
+    <>
+    
     <div className="h-[40rem] w-full rounded-md bg-black relative flex flex-col  items-center justify-center antialiased">
+    
       <div className="max-w-2xl mx-auto p-4">
         <h1 className="relative z-10 text-lg md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600 text-center font-sans font-bold">
           Get in Touch
@@ -12,10 +15,9 @@ export function Contact() {
         <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
           I’m open to discussing freelance projects or full-time opportunities. Let’s connect!
         </p>
+        
 
-       
         <div className="flex gap-6 justify-center mt-10">
-          
           <a
             href="https://github.com/ck07860786"
             target="_blank"
@@ -29,9 +31,8 @@ export function Contact() {
             />
           </a>
 
-         
           <a
-            href="mailto:yourname@example.com"
+            href="mailto:ck4001252@gmail.com"
             className="text-neutral-500 hover:text-white transition duration-300"
           >
             <img
@@ -41,7 +42,6 @@ export function Contact() {
             />
           </a>
 
-          
           <a
             href="https://www.linkedin.com/in/chotukumar786/"
             target="_blank"
@@ -55,9 +55,8 @@ export function Contact() {
             />
           </a>
 
-         
           <a
-            href="https://www.instagram.com/yourusername"
+            href="https://www.instagram.com/thatprem_"
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-500 hover:text-white transition duration-300"
@@ -68,9 +67,13 @@ export function Contact() {
               className="w-12 h-12 hover:scale-110 transition-transform duration-300"
             />
           </a>
+          
         </div>
+        
       </div>
-      <BackgroundBeams />
+      
     </div>
+    
+    </>
   );
 }
