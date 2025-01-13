@@ -95,7 +95,7 @@ export function Skills() {
               {[
                 { name: "GitHub", img: "https://cdn.icon-icons.com/icons2/3685/PNG/512/github_logo_icon_229278.png" },
                 { name: "VS Code", img: "https://external-preview.redd.it/WSuAcyz1u8MoF8cokXspkmOIn8oWXaE8JH-SGXbUUW0.png?auto=webp&s=a6abc62ecb4a08f2bf2f287b79c9bd93006791d1" },
-                { name: "Postman", img: "https://cdn.iconfinder.com/stored_data/2043272/128/png?token=1734841425-eE4tI6PJOY6TOnNuRFeMbYX1ClTxFPfUPjUugotWeO4%3D" },
+                { name: "Postman", img: "https://cdn.iconscout.com/icon/free/png-512/free-postman-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-2945092.png?f=webp&w=256" },
                 { name: "Copilot", img: "https://cdn01.justjared.com/wp-content/uploads/headlines/2024/02/microsoft-copilot-super-bowl-commercial.jpg" },
                 { name: "Figma", img: "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png" },
                 { name: "Cloudinary", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3Lr-sqt1y-yVxzrH47z8uN_f70jycA1GKUg&s" },
