@@ -3,7 +3,7 @@ import React from "react";
 
 export function Skills() {
   return (
-    <div className="h-[] w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
+    <div className="h-[] mt-16 w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
       <div className="w-full max-w-7xl px-4">
       
         <div className="">
@@ -36,7 +36,8 @@ export function Skills() {
                 {
                   name: "NextJS",
                   description: "Full-stack React framework with SSR.",
-                  img: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/nextjs-icon.png",
+                  img: "https://cdn.brandfetch.io/id2alue-rx/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
+                  
                 },
                 {
                   name: "PostgreSQL",

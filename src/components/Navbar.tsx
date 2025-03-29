@@ -1,36 +1,48 @@
 "use client";
-import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem,} from "./ui/navbar-menu";
+import React, { useState, RefObject } from "react";
+import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utils";
 
+interface NavbarProps {
+  journeyRef: RefObject<HTMLDivElement | null>;
+  skillsRef: RefObject<HTMLDivElement | null>;
+  projectsRef: RefObject<HTMLDivElement | null>;
+  achievmentsRef: RefObject<HTMLDivElement | null>;
+  contactRef: RefObject<HTMLDivElement | null>;
+  
+  
+}
 
-
-export default function Navbar({ className }: { className?: string }) {
+export default function Navbar({ journeyRef, skillsRef, projectsRef, contactRef ,achievmentsRef}: NavbarProps) {
   const [active, setActive] = useState<string | null>(null);
-  return (
-    <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
-    >
-      <Menu  setActive={setActive}>
-        <HoveredLink href={'/'}>
-        <MenuItem setActive={setActive} active={active} item="Home">
-        </MenuItem>
-        </HoveredLink>
-        <HoveredLink href={'/'}>
-        <MenuItem setActive={setActive} active={active} item="Skills">
-        
-        </MenuItem>
-        </HoveredLink>
 
-        <HoveredLink href={'/'}>
-        <MenuItem setActive={setActive} active={active} item="Projects">
-          
-        </MenuItem>
+  const scrollToSection = (ref: RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <div className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50")}>
+      <Menu setActive={setActive}>
+        <HoveredLink href="#" onClick={(e:any) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
+          <MenuItem setActive={setActive} active={active} item="Home" />
         </HoveredLink>
-        <HoveredLink href={'/'}>
-        <MenuItem setActive={setActive} active={active} item="Contact">
-         
-        </MenuItem>
+        <HoveredLink href="#" onClick={(e:any) => { e.preventDefault(); scrollToSection(journeyRef); }}>
+          <MenuItem setActive={setActive} active={active} item="Journey" />
+        </HoveredLink>
+        
+        <HoveredLink href="#" onClick={(e:any) => { e.preventDefault(); scrollToSection(skillsRef); }}>
+          <MenuItem setActive={setActive} active={active} item="Skills" />
+        </HoveredLink>
+        <HoveredLink href="#" onClick={(e:any) => { e.preventDefault(); scrollToSection(projectsRef); }}>
+          <MenuItem setActive={setActive} active={active} item="Projects" />
+        </HoveredLink>
+        <HoveredLink href="#" onClick={(e:any) => { e.preventDefault(); scrollToSection(achievmentsRef); }}>
+          <MenuItem setActive={setActive} active={active} item="Achievments" />
+        </HoveredLink>
+        <HoveredLink href="#" onClick={(e:any) => { e.preventDefault(); scrollToSection(contactRef); }}>
+          <MenuItem setActive={setActive} active={active} item="Contact" />
         </HoveredLink>
       </Menu>
     </div>
