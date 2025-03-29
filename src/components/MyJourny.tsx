@@ -30,7 +30,7 @@ export function MyJourny() {
                         ))}
                     </div>
                     <div className="grid grid-cols-2 gap-4">
-                        <Image src="https://cracent.com/images/Logo%20cracent%202.png" alt="Cracent Logo" width={400} height={400} className="rounded-lg object-none h-20 md:h-44 lg:h-60 w-full shadow-md" />
+                        <Image src="https://cracent.com/images/Logo%20cracent%202.png" alt="Cracent Logo" width={400} height={0} className="rounded-lg object-cover    shadow-md" />
                     </div>
                 </div>
             ),
