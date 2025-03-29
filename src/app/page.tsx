@@ -14,18 +14,17 @@ export default function Home() {
   const journeyRef = useRef<HTMLDivElement>(null);
   const skillsRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
   const achievmentsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
-      {/* Pass refs correctly to Navbar */}
       <Navbar 
         journeyRef={journeyRef} 
         skillsRef={skillsRef} 
         projectsRef={projectsRef} 
+        achievmentsRef={achievmentsRef} 
         contactRef={contactRef} 
-        achievmentsRef={achievmentsRef}
       />
 
       <HeroSection />
@@ -33,7 +32,6 @@ export default function Home() {
       <div ref={skillsRef}><Skills /></div>
       <div ref={projectsRef}><ProjectsWork /></div>
       <div ref={achievmentsRef}><Achievement /></div>
-      
       <div ref={contactRef}><GetInTouch /></div>
       <Contact />
     </>
