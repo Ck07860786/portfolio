@@ -19,13 +19,7 @@ export default function Home() {
 
   return (
     <>
-      <Navbar 
-        journeyRef={journeyRef} 
-        skillsRef={skillsRef} 
-        projectsRef={projectsRef} 
-        achievmentsRef={achievmentsRef} 
-        contactRef={contactRef} 
-      />
+      
 
       <HeroSection />
       <div ref={journeyRef}><MyJourny /></div>
