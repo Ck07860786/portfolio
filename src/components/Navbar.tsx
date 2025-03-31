@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, RefObject } from "react";
 import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
-
+import { cn } from "@/lib/utils";
 
 interface NavbarProps {
   journeyRef: RefObject<HTMLDivElement | null>;
@@ -23,12 +23,7 @@ export default function Navbar({ journeyRef, skillsRef, projectsRef, achievments
   return (
     <div className="fixed top-10 inset-x-0 max-w-2xl mx-auto z-50">
       <Menu setActive={setActive}>
-      <HoveredLink href="#" onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { 
-    e.preventDefault(); 
-    window.scrollTo({ top: 0, behavior: "smooth" }); 
-}}>
-  <MenuItem setActive={setActive} active={active} item="Home" />
-</HoveredLink>
+
 
 <HoveredLink href="#" onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { 
     e.preventDefault(); 
