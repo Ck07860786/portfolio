@@ -68,12 +68,13 @@ export const Menu = ({
   children: React.ReactNode;
 }) => {
   return (
-    <nav
-      onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
-    >
-      {children}
-    </nav>
+<nav
+  onMouseLeave={() => setActive(null)} 
+  className="relative rounded-full border pl-4 pr-4 border-transparent sm:text-sm sm:overflow-x-auto sm:m-8 dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-between sm:justify-center space-x-2 sm:space-x-4 px-2 sm:px-4 py-4 sm:py-6 w-full"
+>
+  {children}
+</nav>
+
   );
 };
 

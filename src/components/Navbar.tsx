@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, RefObject } from "react";
 import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
-import { cn } from "@/lib/utils";
+
 
 interface NavbarProps {
   journeyRef: RefObject<HTMLDivElement | null>;
