@@ -11,14 +11,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 import { ArrowUp } from "lucide-react";
 
-interface ClientPageWrapperProps {
-  children: React.ReactNode;
-}
+
 
 // Define the extra props your Hero component can accept
-interface HeroChildProps {
-  projectsRef: React.RefObject<HTMLDivElement>;
-  contactRef: React.RefObject<HTMLDivElement>;
+interface ClientPageWrapperProps {
+  children: React.ReactNode;
 }
 
 export default function ClientPageWrapper({ children }: ClientPageWrapperProps) {
@@ -58,12 +55,17 @@ export default function ClientPageWrapper({ children }: ClientPageWrapperProps) 
   const childrenArray = Array.isArray(children) ? children : [children];
 
   // Clone Hero and inject refs if it's a valid element
-  const enhancedHero = isValidElement<HeroChildProps>(childrenArray[0])
-    ? cloneElement(childrenArray[0], {
-        projectsRef,
-        contactRef,
-      })
-    : childrenArray[0];
+
+  interface HeroChildProps {
+  projectsRef: React.RefObject<HTMLDivElement | null>;
+  contactRef: React.RefObject<HTMLDivElement | null>;
+}
+const enhancedHero = isValidElement<HeroChildProps>(childrenArray[0])
+  ? cloneElement(childrenArray[0], {
+      projectsRef,
+      contactRef,
+    })
+  : childrenArray[0];
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
