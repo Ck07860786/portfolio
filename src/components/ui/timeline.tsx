@@ -1,7 +1,7 @@
 "use client";
 import {  CalendarDaysIcon, Landmark } from "lucide-react";
 import {
-  useMotionValueEvent,
+ 
   useScroll,
   useTransform,
   motion,
@@ -60,7 +60,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <p className="text-neutral-700 dark:text-neutral-400 md:text-base">
           Beyond coding, I enjoy exploring new technologies, contributing
           to open-source projects, and continuously enhancing my skills.
-          Whether it's solving complex problems or collaborating on
+          Whether it&apos;s solving complex problems or collaborating on
           impactful projects, I am always up for a challenge. Let’s take
           a journey through my academic and professional growth below.
         </p>
