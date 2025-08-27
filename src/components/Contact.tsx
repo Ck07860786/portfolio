@@ -1,33 +1,32 @@
 "use client";
-import React, { useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, Github, Instagram, MapPin, Phone, Send } from 'lucide-react';
 
-export function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+export const Contact = forwardRef<HTMLDivElement>((props, ref) => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setStatus('');
-    
-    // Simulate form submission
+    setStatus("");
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setStatus('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' });
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+      setStatus("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
     } catch {
-  setStatus("Something went wrong. Please try again.");
-} finally {
+      setStatus("Something went wrong. Please try again.");
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -88,7 +87,7 @@ export function Contact() {
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section ref={ref}  className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
@@ -285,4 +284,5 @@ export function Contact() {
       </div>
     </section>
   );
-}
+});
+Contact.displayName = "Contact";
