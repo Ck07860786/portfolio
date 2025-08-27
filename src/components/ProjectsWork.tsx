@@ -8,8 +8,10 @@ import visaventure from "@/pictures/visaventure.png";
 import skillverve from "@/pictures/skillverve.png";
 import ecommrce from "@/pictures/ecommrce.png";
 
+type ProjectsWorkProps = React.HTMLAttributes<HTMLDivElement>;
+
 // ✅ ProjectsWork now supports `ref`
-export const ProjectsWork = forwardRef<HTMLDivElement>((props, ref) => {
+export const ProjectsWork = forwardRef<HTMLDivElement, ProjectsWorkProps>((props, ref) => {
   const tabs = [
     {
       title: "VisaVenture",
