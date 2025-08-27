@@ -44,7 +44,15 @@ export default function Achievement() {
 }
 
 // Mobile-friendly grid view
-const MobileAchievementView = ({ products }) => {
+const MobileAchievementView = ({
+  products,
+}: {
+  products: {
+    title: string;
+    link: string;
+    thumbnail: string | StaticImageData;
+  }[];
+}) => {
   return (
     <div className="px-4 ">
       <Header />
@@ -64,7 +72,9 @@ const MobileAchievementView = ({ products }) => {
               <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300" />
             </div>
             <div className="p-4">
-              <h3 className="font-semibold text-lg text-white">{product.title}</h3>
+              <h3 className="font-semibold text-lg text-white">
+                {product.title}
+              </h3>
             </div>
           </div>
         ))}
