@@ -7,7 +7,7 @@ import {
   useSpring,
   MotionValue,
 } from "framer-motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import hackCBS from '@/pictures/hackCBS.jpg'
 import cbs from '../pictures/cbs.jpg'
 import hackBFCET from '@/pictures/hackBFCET.jpg'
@@ -127,7 +127,7 @@ export const HeroParallax = ({
   products: {
     title: string;
     link: string;
-    thumbnail: string;
+    thumbnail: string | StaticImageData;
   }[];
 }) => {
   const firstRow = products.slice(0, 3);
@@ -233,7 +233,7 @@ export const ProductCard = ({
   product: {
     title: string;
     link: string;
-    thumbnail: string;
+    thumbnail: string | StaticImageData;
   };
   translate: MotionValue<number>;
 }) => {
