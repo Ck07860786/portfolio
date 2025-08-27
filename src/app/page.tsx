@@ -22,8 +22,6 @@ export default function Home() {
       <Skills />
       <ProjectsWork ref={projectsRef} />
       <Achievements />
-      <MyJourny />
-      <GetInTouch />
       <Contact ref={contactRef} />
     </ClientPageWrapper>
   );
