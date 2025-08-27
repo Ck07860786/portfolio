@@ -1,8 +1,56 @@
 "use client";
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+
+// Define the timeline item type
+interface TimelineItem {
+  year: string;
+  title: string;
+  company: string;
+  description: string;
+  bullets: string[];
+}
 
 export function AboutMe() {
+  const timeline: TimelineItem[] = [
+    {
+      year: "2025–Present",
+      title: "Full Stack Developer",
+      company: "Cracent Private Limited",
+      description:
+        "Contributing across the stack with a focus on reliability and DX.",
+      bullets: [
+        "Developed modular React/Next.js components with strong typing",
+        "Implemented REST APIs, input validation, and error handling",
+        "Optimized MongoDB queries and API response times (~30% faster)",
+      ],
+    },
+    {
+      year: "2024",
+      title: "Full Stack Training",
+      company: "ThinkNext Technologies",
+      description:
+        "Completed hands-on training building real-world projects end-to-end.",
+      bullets: [
+        "Built CRUD apps with authentication and role-based access",
+        "Integrated third-party services (cloud storage, email, payments)",
+        "Practiced Git workflows, code reviews, and deployment",
+      ],
+    },
+    {
+      year: "2021–2025",
+      title: "B.Tech Computer Science",
+      company: "BFCET Bathinda",
+      description:
+        "Completed B.Tech in Computer Science with focus on modern web development stack.",
+      bullets: [
+        "Data structures, algorithms, DBMS, OS, and networking",
+        "Team projects: agile delivery and documentation",
+        "Hackathons and open-source contributions",
+      ],
+    },
+  ];
+
   return (
     <section className="py-20 px-6 relative overflow-hidden">
       {/* Decorative background orbs */}
@@ -18,13 +66,16 @@ export function AboutMe() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-xs tracking-widest text-white/60 uppercase mb-3">About</p>
+          <p className="text-xs tracking-widest text-white/60 uppercase mb-3">
+            About
+          </p>
           <h2 className="text-4xl md:text-5xl font-bold  py-2 bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent">
             My Journey
           </h2>
           <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
-            Full‑stack engineer focused on building performant, reliable products with clean architecture
-            and thoughtful UX. I care about clarity, maintainability, and measurable impact.
+            Full-stack engineer focused on building performant, reliable products with clean
+            architecture and thoughtful UX. I care about clarity, maintainability, and measurable
+            impact.
           </p>
         </motion.div>
 
@@ -38,14 +89,16 @@ export function AboutMe() {
             className="space-y-8"
           >
             <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6 md:p-8 shadow-[0_0_30px_rgba(99,68,245,0.15)]">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">Hello, I'm Chotu Kumar</h3>
-             <p className="text-base md:text-lg text-gray-300 mb-4 leading-relaxed">
-  Full-stack developer, completed B.Tech in Computer Science at BFCET
-  Bathinda. I design modular systems, ship iteratively, and write readable, well-tested code.
-</p>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                Hello, I&apos;m Chotu Kumar
+              </h3>
+              <p className="text-base md:text-lg text-gray-300 mb-4 leading-relaxed">
+                Full-stack developer, completed B.Tech in Computer Science at BFCET Bathinda. I
+                design modular systems, ship iteratively, and write readable, well-tested code.
+              </p>
               <ul className="list-disc pl-5 space-y-2 text-gray-300">
-                <li>End‑to‑end product development: UI, APIs, DB, auth, deployment</li>
-                <li>Component‑driven front‑end with accessibility and motion design</li>
+                <li>End-to-end product development: UI, APIs, DB, auth, deployment</li>
+                <li>Component-driven front-end with accessibility and motion design</li>
                 <li>RESTful services, data modeling, and pragmatic performance tuning</li>
               </ul>
             </div>
@@ -53,9 +106,9 @@ export function AboutMe() {
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { label: 'Experience', value: '1+ Year' },
-                { label: 'Projects', value: '15+' },
-                { label: 'Tech', value: '10+ Stack' }
+                { label: "Experience", value: "1+ Year" },
+                { label: "Projects", value: "15+" },
+                { label: "Tech", value: "10+ Stack" },
               ].map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -76,16 +129,19 @@ export function AboutMe() {
               <p className="text-sm text-white/70 mb-3">Core competencies</p>
               <div className="flex flex-wrap gap-2">
                 {[
-                  'React • Next.js',
-                  'Node.js • Express',
-                  'TypeScript',
-                  'MongoDB • PostgreSQL',
-                  'Tailwind CSS',
-                  'Framer Motion',
-                  'Auth • JWT • OAuth',
-                  'Cloud • Vercel'
+                  "React • Next.js",
+                  "Node.js • Express",
+                  "TypeScript",
+                  "MongoDB • PostgreSQL",
+                  "Tailwind CSS",
+                  "Framer Motion",
+                  "Auth • JWT • OAuth",
+                  "Cloud • Vercel",
                 ].map((chip) => (
-                  <span key={chip} className="px-3 py-1 rounded-full text-xs bg-white/10 border border-white/10 text-gray-200">
+                  <span
+                    key={chip}
+                    className="px-3 py-1 rounded-full text-xs bg-white/10 border border-white/10 text-gray-200"
+                  >
                     {chip}
                   </span>
                 ))}
@@ -101,43 +157,9 @@ export function AboutMe() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            {[
-              {
-                year: '2025–Present',
-                title: 'Full Stack Developer',
-                company: 'Cracent Private Limited',
-                description: 'Contributing across the stack with a focus on reliability and DX.',
-                bullets: [
-                  'Developed modular React/Next.js components with strong typing',
-                  'Implemented REST APIs, input validation, and error handling',
-                  'Optimized MongoDB queries and API response times (~30% faster)'
-                ]
-              },
-              {
-                year: '2024',
-                title: 'Full Stack Training',
-                company: 'ThinkNext Technologies',
-                description: 'Completed hands‑on training building real‑world projects end‑to‑end.',
-                bullets: [
-                  'Built CRUD apps with authentication and role‑based access',
-                  'Integrated third‑party services (cloud storage, email, payments)',
-                  'Practiced Git workflows, code reviews, and deployment'
-                ]
-              },
-         {
-  year: '2021–2025',
-  title: 'B.Tech Computer Science',
-  company: 'BFCET Bathinda',
-  description: 'Completed B.Tech in Computer Science with focus on modern web development stack.',
-  bullets: [
-    'Data structures, algorithms, DBMS, OS, and networking',
-    'Team projects: agile delivery and documentation',
-    'Hackathons and open-source contributions'
-  ]
-}
-            ].map((item: any, index) => (
+            {timeline.map((item, index) => (
               <motion.div
-                key={index}
+                key={item.year}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -158,7 +180,7 @@ export function AboutMe() {
                   <p className="text-gray-300 mt-2 leading-relaxed">{item.description}</p>
                   {item.bullets && (
                     <ul className="list-disc pl-5 mt-3 space-y-1 text-gray-300">
-                      {item.bullets.map((b: string) => (
+                      {item.bullets.map((b) => (
                         <li key={b}>{b}</li>
                       ))}
                     </ul>

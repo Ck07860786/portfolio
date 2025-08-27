@@ -1,12 +1,24 @@
 "use client";
 
-import { useRef, useState, useEffect, cloneElement, isValidElement } from "react";
+import {
+  useRef,
+  useState,
+  useEffect,
+  cloneElement,
+  isValidElement,
+} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 import { ArrowUp } from "lucide-react";
 
 interface ClientPageWrapperProps {
   children: React.ReactNode;
+}
+
+// Define the extra props your Hero component can accept
+interface HeroChildProps {
+  projectsRef: React.RefObject<HTMLDivElement>;
+  contactRef: React.RefObject<HTMLDivElement>;
 }
 
 export default function ClientPageWrapper({ children }: ClientPageWrapperProps) {
@@ -44,8 +56,10 @@ export default function ClientPageWrapper({ children }: ClientPageWrapperProps) 
   };
 
   const childrenArray = Array.isArray(children) ? children : [children];
-  const enhancedHero = isValidElement(childrenArray[0])
-    ? cloneElement(childrenArray[0] as React.ReactElement<any>, {
+
+  // Clone Hero and inject refs if it's a valid element
+  const enhancedHero = isValidElement<HeroChildProps>(childrenArray[0])
+    ? cloneElement(childrenArray[0], {
         projectsRef,
         contactRef,
       })

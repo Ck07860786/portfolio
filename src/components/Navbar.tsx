@@ -28,7 +28,6 @@ export default function Navbar({
   
   // Smooth transforms for navbar animation
   const navbarHeight = useTransform(scrollY, [0, 100], [80, 64]);
-  const navbarBlur = useTransform(scrollY, [0, 50], [8, 20]);
   const logoScale = useTransform(scrollY, [0, 100], [1, 0.9]);
   const progressWidth = useTransform(scrollY, [0, 2000], ['0%', '100%']);
 

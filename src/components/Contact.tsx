@@ -25,9 +25,9 @@ export function Contact() {
       await new Promise(resolve => setTimeout(resolve, 2000));
       setStatus('Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      setStatus('Something went wrong. Please try again.');
-    } finally {
+    } catch {
+  setStatus("Something went wrong. Please try again.");
+} finally {
       setIsSubmitting(false);
     }
   };
@@ -96,7 +96,7 @@ export function Contact() {
           viewport={{ once: true }}
           className=" text-4xl md:text-5xl font-bold text-center py-2 bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent mb-16"
         >
-          Let's Work Together
+          Let&apos;s Work Together
         </motion.h2>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -110,8 +110,8 @@ export function Contact() {
             <div>
               <h3 className="text-3xl font-bold text-white mb-6">Get In Touch</h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
-                I'm always excited to work on new projects and collaborate with amazing people. 
-                Whether you have a project in mind or just want to connect, I'd love to hear from you!
+                I&apos;m always excited to work on new projects and collaborate with amazing people. 
+                Whether you have a project in mind or just want to connect, I&apos;s love to hear from you!
               </p>
             </div>
 
@@ -269,7 +269,7 @@ export function Contact() {
           <div className="inline-block p-8 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-2xl backdrop-blur-sm border border-white/10">
             <h3 className="text-2xl font-bold text-white mb-4">Ready to Start Your Project?</h3>
             <p className="text-gray-300 mb-6 max-w-md">
-              Let's discuss your ideas and bring them to life with cutting-edge technology and creative solutions.
+              Let&apos;s discuss your ideas and bring them to life with cutting-edge technology and creative solutions.
             </p>
             <motion.a
               href="mailto:ck4001252@gmail.com"

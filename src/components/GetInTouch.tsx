@@ -58,7 +58,8 @@ export default function GetInTouch() {
          <h1 className="text-lg md:text-6xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600  font-sans font-bold ">
           Get in Touch
         </h1>
-          <p className="text-gray-400">Let's collaborate and create something amazing. Feel free to reach out!</p>
+          <p className="text-gray-400">Let’s collaborate and create something amazing. Feel free to reach out!</p>
+
           <div className="flex items-center space-x-4">
             <Mail className="text-blue-500" />
             <p className="text-gray-300">contact@yourdomain.com</p>
