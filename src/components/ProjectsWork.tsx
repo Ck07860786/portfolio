@@ -1,13 +1,15 @@
 "use client";
 
-import Image,{StaticImageData} from "next/image";
+import React, { forwardRef } from "react";
+import Image, { StaticImageData } from "next/image";
 import { Tabs } from "./ui/tabs";
 import partyplanner from "@/pictures/partyplanner.png";
 import visaventure from "@/pictures/visaventure.png";
 import skillverve from "@/pictures/skillverve.png";
 import ecommrce from "@/pictures/ecommrce.png";
 
-export function ProjectsWork() {
+// ✅ ProjectsWork now supports `ref`
+export const ProjectsWork = forwardRef<HTMLDivElement>((props, ref) => {
   const tabs = [
     {
       title: "VisaVenture",
@@ -116,24 +118,26 @@ export function ProjectsWork() {
   ];
 
   return (
-    <>
-    <div className="max-w-7xl mx-auto my-16 mt-28 mb-40 px-4">
-     
-      <h1 className="text-4xl font-bold text-center text-neutral-700 dark:text-neutral-400 mb-12">
-        Project Work
-      </h1>
+    <div ref={ref} className="max-w-7xl mx-auto my-16 mt-28 mb-40 px-4">
+     <h1 className="text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent mb-4">
+  Project Work
+</h1>
+<p className="text-center text-gray-300 max-w-2xl mx-auto mb-12">
+  A showcase of my key projects highlighting expertise in full-stack development, 
+  problem-solving, and building scalable solutions.
+</p>
 
-      
+
       <div className="mb-16">
         <Tabs tabs={tabs} />
       </div>
-
-      
     </div>
-    </>
   );
-}
+});
 
+ProjectsWork.displayName = "ProjectsWork";
+
+// ✅ Tab content stays the same
 const ProjectTabContent = ({
   title,
   description,
@@ -185,7 +189,7 @@ const ProjectTabContent = ({
         </div>
       </div>
 
-   
+      {/* Image Section */}
       <div className="flex-1 min-h-full">
         <Image
           src={image}
@@ -198,5 +202,3 @@ const ProjectTabContent = ({
     </div>
   );
 };
-
-
