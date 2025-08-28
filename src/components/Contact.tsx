@@ -110,7 +110,7 @@ export const Contact = forwardRef<HTMLDivElement>((props, ref) => {
               <h3 className="text-3xl font-bold text-white mb-6">Get In Touch</h3>
               <p className="text-lg text-gray-300 leading-relaxed mb-8">
                 I&apos;m always excited to work on new projects and collaborate with amazing people. 
-                Whether you have a project in mind or just want to connect, I&apos;s love to hear from you!
+                Whether you have a project in mind or just want to connect, I&apos;d love to hear from you!
               </p>
             </div>
 
