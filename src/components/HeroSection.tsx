@@ -1,188 +1,88 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import { motion, useTransform, useScroll, useReducedMotion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
-import MyImage from "../../public/assets/ckimage.png";
-import Image from "next/image";
-import { ComicText } from "./ui/comic-text";
+import HeroVisual from "./HeroVisual";
 
-type DivRef = React.RefObject<HTMLDivElement | null> | React.MutableRefObject<HTMLDivElement | null>;
-
-interface ModernHeroProps {
-  projectsRef: DivRef;
-  contactRef: DivRef;
-}
-
-export function HeroSection({ projectsRef, contactRef }: ModernHeroProps) {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const shouldReduceMotion = useReducedMotion();
-
-  const scrollToSection = (sectionRef: DivRef | null) => {
-    if (sectionRef && sectionRef.current) {
-      const targetPosition = sectionRef.current.offsetTop - 80;
-      window.scrollTo({ top: targetPosition, behavior: "smooth" });
-    } else {
-      console.error("Section reference is not available");
-    }
-  };
-
-  useEffect(() => {
-    const timer = setTimeout(() => setImageLoaded(true), 300);
-    return () => clearTimeout(timer);
-  }, []);
-
+function HeroSection() {
   return (
-    <section
-      id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 md:px-8"
-      aria-label="Introduction"
-    >
-      {/* Background animated orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full mix-blend-screen filter blur-xl opacity-30"
-            style={{
-              background: `linear-gradient(45deg, ${
-                ["#ff006e", "#8338ec", "#3a86ff", "#06ffa5", "#ffbe0b"][i]
-              }, transparent)`,
-              width: `${150 + i * 100}px`,
-              height: `${150 + i * 100}px`,
-              left: `${15 * i}%`,
-              top: `${8 * i}%`,
-            }}
-            animate={
-              shouldReduceMotion
-                ? {}
-                : {
-                    x: [0, 100, 0],
-                    y: [0, -100, 0],
-                    rotate: [0, 180, 360],
-                  }
-            }
-            transition={
-              shouldReduceMotion
-                ? {}
-                : { duration: 10 + i * 2, repeat: Infinity, ease: "linear" }
-            }
-          />
-        ))}
+    <section className="min-h-screen flex flex-col justify-center pt-24 pb-16 px-6 max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-[1fr_420px] gap-16 items-center">
+        {/* Left */}
+        <div>
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono-custom font-medium mb-8 border"
+            style={{ color: "var(--primary)", borderColor: "var(--primary)", background: "rgba(43,99,84,0.07)" }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "var(--primary)" }} />
+            Open to Full Stack / MERN opportunities
+          </div>
+
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight mb-6" style={{ color: "var(--foreground)" }}>
+            Full Stack Developer building scalable,{" "}
+            <em className="not-italic" style={{ color: "var(--primary)" }}>production-ready</em>{" "}
+            web experiences.
+          </h1>
+
+          <p className="text-lg leading-relaxed mb-8 max-w-xl" style={{ color: "var(--muted-foreground)" }}>
+            I build modern web applications across the MERN stack — from intuitive React
+            interfaces to scalable Node.js backends. 1.5+ years of professional experience
+            shipping real production applications and 100+ REST APIs.
+          </p>
+
+          <div className="flex flex-wrap gap-3 mb-10">
+            <a
+              href="#projects"
+              className="px-6 py-3 rounded-md text-sm font-semibold transition-all duration-200"
+              style={{ background: "var(--primary)", color: "var(--primary-foreground)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.88"; e.currentTarget.style.transform = "translateY(-1px)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "translateY(0)"; }}
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-md text-sm font-semibold border transition-all duration-200"
+              style={{ border: "1.5px solid var(--foreground)", color: "var(--foreground)", background: "transparent" }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "var(--foreground)"; e.currentTarget.style.color = "var(--background)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--foreground)"; }}
+            >
+              Let's Connect
+            </a>
+          </div>
+
+          {/* Social */}
+          <div className="flex items-center gap-5">
+            <span className="text-xs font-mono-custom uppercase tracking-widest" style={{ color: "var(--muted-foreground)" }}>Find me on</span>
+            {[
+              { label: "GitHub", href: "https://github.com/Ck07860786", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/chotukumar786/", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> },
+              { label: "Email", href: "mailto:ck4001252@gmail.com", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg> },
+            ].map(({ label, href, icon }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                className="transition-colors duration-200"
+                style={{ color: "var(--muted-foreground)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted-foreground)")}
+              >
+                {icon}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Right — 3D Code Visual */}
+        <div className="hidden lg:block">
+          <HeroVisual />
+        </div>
       </div>
 
-      {/* Hero content */}
-      <motion.div
-        style={{ y: shouldReduceMotion ? 0 : y }}
-        className="text-center z-10 max-w-6xl mx-auto w-full"
-      >
-        {/* Availability badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex items-center justify-center mb-6 mt-6 sm:mb-8"
-        >
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-green-400/30 bg-green-900/10 backdrop-blur-md shadow-lg shadow-green-500/10 relative overflow-hidden text-sm sm:text-base">
-            {!shouldReduceMotion && (
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/20 to-transparent"
-                initial={{ x: "-100%" }}
-                animate={{ x: "100%" }}
-                transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
-              />
-            )}
-            <span className="relative flex h-3 w-3">
-              {!shouldReduceMotion && (
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              )}
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500 border border-green-300"></span>
-            </span>
-            <span className="text-green-400 font-semibold">Open to new opportunities</span>
-          </div>
-        </motion.div>
-
-        {/* Profile image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6 sm:mb-8"
-        >
-          <div className="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 mx-auto mb-6 sm:mb-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
-            <div className="w-full h-full rounded-full overflow-hidden bg-black flex items-center justify-center relative">
-              <Image
-                src={MyImage}
-                alt="Professional headshot of a Full Stack Developer"
-                className={`w-full h-full object-cover transition-opacity duration-500 ${
-                  imageLoaded ? "opacity-100" : "opacity-0"
-                }`}
-                onLoadingComplete={() => setImageLoaded(true)}
-                priority
-              />
-              {!imageLoaded && <div className="absolute inset-0 bg-gray-700 animate-pulse rounded-full"></div>}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6"
-        >
-          <ComicText>Full Stack Developer</ComicText>
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-6 sm:mb-8 max-w-2xl md:max-w-3xl mx-auto leading-relaxed"
-        >
-          Crafting digital experiences with cutting-edge technologies and creative solutions
-        </motion.p>
-
-        {/* CTA buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
-        >
-          <motion.button
-            onClick={() => scrollToSection(projectsRef)}
-            whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
-            whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
-            className="w-full sm:w-auto px-5 py-3 sm:px-6 md:px-8 sm:py-3.5 md:py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold text-sm sm:text-base md:text-lg"
-          >
-            View My Work
-          </motion.button>
-          <motion.button
-            onClick={() => scrollToSection(contactRef)}
-            whileHover={shouldReduceMotion ? {} : { scale: 1.05 }}
-            whileTap={shouldReduceMotion ? {} : { scale: 0.95 }}
-            className="w-full sm:w-auto px-5 py-3 sm:px-6 md:px-8 sm:py-3.5 md:py-4 border-2 border-white/20 rounded-full text-white font-semibold text-sm sm:text-base md:text-lg backdrop-blur-sm hover:bg-white/10 transition-colors"
-          >
-            Let&apos;s Connect
-          </motion.button>
-        </motion.div>
-      </motion.div>
-
-      {/* Scroll chevron */}
-      {!shouldReduceMotion && (
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2"
-          aria-hidden="true"
-        >
-          <ChevronDown />
-        </motion.div>
-      )}
+      {/* Scroll indicator */}
+      <div className="mt-16 flex items-center gap-3">
+        <div className="h-px flex-1 max-w-[60px]" style={{ background: "var(--border)" }} />
+        <span className="text-xs font-mono-custom uppercase tracking-widest" style={{ color: "var(--muted-foreground)" }}>Scroll to explore</span>
+      </div>
     </section>
   );
 }
+
+export default HeroSection;

@@ -1,26 +1,38 @@
 "use client";
 
-import { AboutMe } from "@/components/AboutMe";
-import Achievements from "@/components/Achievement"; // plural, keep your import style
-import ClientPageWrapper from "@/components/ClientPageWrapper";
-import { Contact } from "@/components/Contact";
-import { HeroSection } from "@/components/HeroSection";
-import { ProjectsWork } from "@/components/ProjectsWork";
-import { Skills } from "@/components/Skills";
-import { useRef } from "react";
+import AboutMe from "@/components/AboutMe";
+import Achievements from "@/components/Achievement";
+import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import HowIBuild from "@/components/HowIBuild";
+import Navbar from "@/components/Navbar";
+import ProjectsWork from "@/components/ProjectsWork";
+import Skills from "@/components/Skills";
+import Stats from "@/components/Stats";
+
+
 
 export default function Home() {
-  const projectsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
+;
 
   return (
-    <ClientPageWrapper>
-      <HeroSection projectsRef={projectsRef} contactRef={contactRef} />
-      <AboutMe />
-      <Skills />
-      <ProjectsWork ref={projectsRef} />
-      <Achievements />
-      <Contact ref={contactRef} />
-    </ClientPageWrapper>
+    <>
+    <Navbar/>
+    <HeroSection/>
+    <Stats/>
+    <AboutMe/>
+    <Experience/>
+    <ProjectsWork/>
+    <Skills/>
+    <HowIBuild/>
+    <Achievements/>
+    <Contact/>
+    <Footer/>
+    </>
+  
+   
+ 
   );
 }
