@@ -229,12 +229,6 @@ function ProjectCard({ project, large }: { project: Project; large?: boolean }) 
                   </div>
                 </div>
               </div>
-
-              <div className="flex gap-2">
-                {["MongoDB", "Node.js", "AWS SES"].map(t => (
-                  <span key={t} className="px-2 py-1 rounded text-[10px] font-mono-custom" style={{ background: "var(--card)", color: "var(--muted-foreground)", border: "1px solid var(--border)" }}>{t}</span>
-                ))}
-              </div>
             </div>
           </div>
 
