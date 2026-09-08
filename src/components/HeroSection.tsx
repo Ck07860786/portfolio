@@ -43,7 +43,7 @@ function HeroSection() {
               onMouseEnter={(e) => { e.currentTarget.style.background = "var(--foreground)"; e.currentTarget.style.color = "var(--background)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--foreground)"; }}
             >
-              Let's Connect
+              Let&apos;s Connect
             </a>
           </div>
 

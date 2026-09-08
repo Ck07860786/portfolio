@@ -18,7 +18,7 @@ function Experience() {
       <div className="max-w-6xl mx-auto">
         <div className="reveal font-mono-custom text-xs uppercase tracking-widest mb-4" style={{ color: "var(--primary)" }}>Experience</div>
         <h2 className="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-semibold mb-16" style={{ color: "var(--foreground)" }}>
-          Where I've worked.
+          Where I&apos;ve worked.
         </h2>
 
         <div className="grid lg:grid-cols-[240px_1fr] gap-12">

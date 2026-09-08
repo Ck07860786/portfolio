@@ -48,7 +48,7 @@ const MERN_NODES = [
     };
     timerRef.current = setTimeout(tick, 800);
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-  }, []);
+  }, [CODE_LINES.length]);
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const rect = cardRef.current?.getBoundingClientRect();

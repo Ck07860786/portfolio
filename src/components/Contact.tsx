@@ -34,11 +34,11 @@ function Contact() {
           <div>
             <div className="reveal font-mono-custom text-xs uppercase tracking-widest mb-4" style={{ color: "var(--primary)" }}>Contact</div>
             <h2 className="reveal reveal-delay-1 font-display text-4xl md:text-5xl font-semibold leading-tight mb-6" style={{ color: "var(--foreground)" }}>
-              Have a project in mind? Let's build something{" "}
+              Have a project in mind? Let&apos;s build something{" "}
               <em className="not-italic" style={{ color: "var(--primary)" }}>useful.</em>
             </h2>
             <p className="reveal reveal-delay-2 text-base leading-relaxed mb-8" style={{ color: "var(--muted-foreground)" }}>
-              I'm open to Full Stack / MERN opportunities, interesting products, and collaborations. If you're building something real, I'd love to hear about it.
+              I&apos;m open to Full Stack / MERN opportunities, interesting products, and collaborations. If you&apos;re building something real, I&apos;d love to hear about it.
             </p>
 
             {/* Availability badge */}

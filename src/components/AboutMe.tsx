@@ -12,13 +12,13 @@ function AboutMe() {
           </h2>
           <div className="reveal reveal-delay-2 space-y-4 text-base leading-relaxed" style={{ color: "var(--muted-foreground)", maxWidth: "540px" }}>
             <p>
-              I'm a Full Stack Developer who enjoys building complete products — not just writing code to spec. I think in systems: how does the data model affect the API design? How does the API shape the frontend experience?
+              I&apos;m a Full Stack Developer who enjoys building complete products — not just writing code to spec. I think in systems: how does the data model affect the API design? How does the API shape the frontend experience?
             </p>
             <p>
-              With 1.5+ years of professional experience at Cracent Pvt. Ltd., I've contributed to real production applications — handling 30+ RESTful APIs, JWT-based auth, role-based access control, MongoDB schema design, AWS SES email workflows, and AI-powered feature integrations.
+              With 1.5+ years of professional experience at Cracent Pvt. Ltd., I&apos;ve contributed to real production applications — handling 30+ RESTful APIs, JWT-based auth, role-based access control, MongoDB schema design, AWS SES email workflows, and AI-powered feature integrations.
             </p>
             <p>
-              I care about code that's maintainable, UIs that are intuitive, and systems that can scale without breaking.
+              I care about code that&apos;s maintainable, UIs that are intuitive, and systems that can scale without breaking.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ function AboutMe() {
             </div>
 
             <div className="mt-6 pt-5 border-t" style={{ borderColor: "var(--border)" }}>
-              <div className="text-xs font-mono-custom mb-3" style={{ color: "var(--muted-foreground)" }}>// how I start a new project</div>
+              <div className="text-xs font-mono-custom mb-3" style={{ color: "var(--muted-foreground)" }}>{"// how I start a new project"}</div>
               <pre className="text-[11px] leading-relaxed font-mono-custom overflow-hidden" style={{ color: "var(--primary)" }}>{`const build = async (idea) => {
   await understand(idea);
   const arch = design(arch);
