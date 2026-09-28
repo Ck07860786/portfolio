@@ -42,6 +42,7 @@ const PROJECTS: Project[] = [
     ],
     featured: true,
     github: "https://github.com/Ck07860786/FixPro",
+    demo: "https://fixproin.vercel.app",
   },
   {
     title: "VisaVenture – Visa & Travel Management Platform",
@@ -60,7 +61,11 @@ const PROJECTS: Project[] = [
       "Express.js",
       "MongoDB",
       "REST APIs",
-      "Responsive UI"
+      "Responsive UI",
+      "Tailwind CSS",
+      "JWT",
+      "Axios",
+      "Framer Motion",
     ],
     featured: true,
     github: "https://github.com/Ck07860786/VisaVenture",
